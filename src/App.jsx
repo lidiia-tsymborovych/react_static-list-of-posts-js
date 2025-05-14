@@ -5,7 +5,10 @@ import commentsFromServer from './api/comments.json';
 import usersFromServer from './api/users.json';
 import { PostList } from './components/PostList';
 
-const userInfo = userId => usersFromServer.find(user => user.id === userId);
+function userInfo(userId) {
+  return usersFromServer.find(user => user.id === userId);
+}
+
 const commentList = postId =>
   commentsFromServer.filter(comment => comment.postId === postId);
 
